@@ -10,6 +10,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
   name: '@gammarers/aws-iam-transfer-user-access-role',
   projenrcTs: true,
   repositoryUrl: 'https://github.com/gammarers/aws-iam-transfer-user-access-role.git',
+  deps: [
+    '@gammarers/aws-cdk-errors@~0.2.0',
+  ],
   releaseToNpm: false, // temporary
   depsUpgrade: true,
   depsUpgradeOptions: {
