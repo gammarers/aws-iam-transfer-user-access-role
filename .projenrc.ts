@@ -13,13 +13,19 @@ const project = new awscdk.AwsCdkConstructLibrary({
   deps: [
     '@gammarers/aws-cdk-errors@~0.2.0',
   ],
-  releaseToNpm: false, // temporary
+  releaseToNpm: true,
   depsUpgrade: true,
   depsUpgradeOptions: {
     workflowOptions: {
       labels: ['auto-approve', 'auto-merge'],
       schedule: javascript.UpgradeDependenciesSchedule.expressions(['0 18 * * *']), // every sunday (JST/MON:03:00)
     },
+  },
+  minNodeVersion: '18.0.0',
+  workflowNodeVersion: '22.x',
+  autoApproveOptions: {
+    secret: 'GITHUB_TOKEN',
+    allowedUsernames: ['yicr'],
   },
 });
 project.synth();
