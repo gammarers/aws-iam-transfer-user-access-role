@@ -16,6 +16,7 @@
     "eslint": "npx projen eslint",
     "package": "npx projen package",
     "package-all": "npx projen package-all",
+    "package:js": "npx projen package:js",
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
@@ -59,9 +60,15 @@
     "aws-cdk-lib": "^2.80.0",
     "constructs": "^10.0.5"
   },
+  "dependencies": {
+    "@gammarers/aws-cdk-errors": "~0.2.0"
+  },
   "keywords": [
     "cdk"
   ],
+  "engines": {
+    "node": ">= 18.0.0"
+  },
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "version": "0.0.0",

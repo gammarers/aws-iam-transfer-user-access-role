@@ -10,13 +10,22 @@ const project = new awscdk.AwsCdkConstructLibrary({
   name: '@gammarers/aws-iam-transfer-user-access-role',
   projenrcTs: true,
   repositoryUrl: 'https://github.com/gammarers/aws-iam-transfer-user-access-role.git',
-  releaseToNpm: false, // temporary
+  deps: [
+    '@gammarers/aws-cdk-errors@~0.2.0',
+  ],
+  releaseToNpm: true,
   depsUpgrade: true,
   depsUpgradeOptions: {
     workflowOptions: {
       labels: ['auto-approve', 'auto-merge'],
       schedule: javascript.UpgradeDependenciesSchedule.expressions(['0 18 * * *']), // every sunday (JST/MON:03:00)
     },
+  },
+  minNodeVersion: '18.0.0',
+  workflowNodeVersion: '22.x',
+  autoApproveOptions: {
+    secret: 'GITHUB_TOKEN',
+    allowedUsernames: ['yicr'],
   },
 });
 project.synth();
