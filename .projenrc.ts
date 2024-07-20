@@ -18,11 +18,11 @@ const project = new awscdk.AwsCdkConstructLibrary({
   depsUpgradeOptions: {
     workflowOptions: {
       labels: ['auto-approve', 'auto-merge'],
-      schedule: javascript.UpgradeDependenciesSchedule.expressions(['0 18 * * *']), // every sunday (JST/MON:03:00)
+      schedule: javascript.UpgradeDependenciesSchedule.expressions(['15 17 * * 4']), // every sunday (JST/MON:03:00)
     },
   },
   minNodeVersion: '18.0.0',
-  workflowNodeVersion: '22.x',
+  workflowNodeVersion: '22.4.x',
   autoApproveOptions: {
     secret: 'GITHUB_TOKEN',
     allowedUsernames: ['yicr'],
