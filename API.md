@@ -43,7 +43,7 @@ new IamTransferUserAccessRole(scope: Construct, id: string, props: IamTransferUs
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@gammarers/aws-iam-transfer-user-access-role.IamTransferUserAccessRole.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#@gammarers/aws-iam-transfer-user-access-role.IamTransferUserAccessRole.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
+| <code><a href="#@gammarers/aws-iam-transfer-user-access-role.IamTransferUserAccessRole.applyRemovalPolicy">applyRemovalPolicy</a></code> | Skip applyRemovalPolicy if role synthesis is prevented by customizeRoles. |
 | <code><a href="#@gammarers/aws-iam-transfer-user-access-role.IamTransferUserAccessRole.addManagedPolicy">addManagedPolicy</a></code> | Attaches a managed policy to this role. |
 | <code><a href="#@gammarers/aws-iam-transfer-user-access-role.IamTransferUserAccessRole.addToPolicy">addToPolicy</a></code> | Add to the policy of this principal. |
 | <code><a href="#@gammarers/aws-iam-transfer-user-access-role.IamTransferUserAccessRole.addToPrincipalPolicy">addToPrincipalPolicy</a></code> | Adds a permission to the role's default policy document. |
@@ -69,19 +69,15 @@ Returns a string representation of this construct.
 public applyRemovalPolicy(policy: RemovalPolicy): void
 ```
 
-Apply the given removal policy to this resource.
+Skip applyRemovalPolicy if role synthesis is prevented by customizeRoles.
 
-The Removal Policy controls what happens to this resource when it stops
-being managed by CloudFormation, either because you've removed it from the
-CDK application or because you've made a change that requires the resource
-to be replaced.
-
-The resource can be deleted (`RemovalPolicy.DESTROY`), or left in your AWS
-account for data recovery and cleanup later (`RemovalPolicy.RETAIN`).
+Because in this case, this construct does not have a CfnResource in the tree.
 
 ###### `policy`<sup>Required</sup> <a name="policy" id="@gammarers/aws-iam-transfer-user-access-role.IamTransferUserAccessRole.applyRemovalPolicy.parameter.policy"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicy
+
+RemovalPolicy.
 
 ---
 
