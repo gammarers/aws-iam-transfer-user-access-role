@@ -41,7 +41,7 @@ export class IamTransferUserAccessRole extends iam.Role {
         return props.description ?? 'sftp user access role';
       })(),
       assumedBy: new iam.ServicePrincipal('transfer.amazonaws.com'),
-      inlinePolicies: ((): {[name: string]: iam.PolicyDocument} => {
+      inlinePolicies: ((): { [name: string]: iam.PolicyDocument } => {
         const policies = {
           ['allow-bucket-access-policy']: new iam.PolicyDocument({
             statements: [
