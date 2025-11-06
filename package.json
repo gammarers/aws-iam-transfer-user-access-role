@@ -62,7 +62,7 @@
     "constructs": "^10.0.5"
   },
   "dependencies": {
-    "@gammarers/aws-cdk-errors": "~0.2.0"
+    "@gammarers/aws-cdk-errors": "^1.2.0"
   },
   "keywords": [
     "cdk"

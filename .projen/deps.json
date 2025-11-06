@@ -103,7 +103,7 @@
     },
     {
       "name": "@gammarers/aws-cdk-errors",
-      "version": "~0.2.0",
+      "version": "^1.2.0",
       "type": "runtime"
     }
   ],
